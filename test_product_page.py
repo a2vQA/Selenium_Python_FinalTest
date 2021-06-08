@@ -26,3 +26,15 @@ def test_guest_can_add_product_to_basket(browser):
     page.solve_quiz_and_get_code()
     page.name_check()
     page.price_check()
+
+
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    link = 'http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/'
+    browser.get(link)
+    browser.find_element_by_css_selector('div.basket-mini.pull-right.hidden-xs > span > a').click()
+    time.sleep(2)
+    # assert browser.find_element_by_css_selector('.total align-right') == 0, "basket not empty"
+    assert browser.find_element_by_css_selector('#content_inner > p').text == "Ваша корзина пуста Продолжить покупки", \
+        "message of " \
+        "empty basket " \
+        "is presented "

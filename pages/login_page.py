@@ -10,7 +10,7 @@ class LoginPage(BasePage):
         self.should_be_register_form()
 
     def should_be_login_url(self):
-        self.find_element(By.ID, 'login_link').click()
+        self.browser.find_element(By.ID, 'login_link').click()
         assert "/login" in self.browser.current_url, "current URL does not have 'login'"
 
     def should_be_login_form(self):
