@@ -4,7 +4,7 @@ from .base_page import BasePage
 from selenium.common.exceptions import NoAlertPresentException
 import math
 from selenium import webdriver
-from .locators import BasketTaskLocators
+from .locators import BasketTaskLocators, ProductPageLocators
 
 
 class ProductPage(BasePage):
@@ -12,6 +12,15 @@ class ProductPage(BasePage):
     def popup_alert(self):
         browser = webdriver
         btn = self.browser.find_element(*BasketTaskLocators.basket_btn).click()
+
+    def check_message_about_adding_to_basket(self):
+        basket_message = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE)
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def check_success_message_on_product_page(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
 
     def solve_quiz_and_get_code(self):
         WebDriverWait(self.browser, 3).until(EC.alert_is_present())

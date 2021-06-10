@@ -22,7 +22,22 @@ class BasketTaskLocators:
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+    SUCCESS_MESSAGE1 = (By.CSS_SELECTOR, "#messages div.alertinner")
 
 
 class AnyPageLocators:
     BASKET_BTN = (By.CSS_SELECTOR, "div.basket-mini.pull-right.hidden-xs > span > a")
+
+
+class ProductPageLocators:
+    button_basket = (By.CSS_SELECTOR, ".product_main .btn-add-to-basket")
+    basket_message_sl = (By.CSS_SELECTOR, "#messages>:nth-child(1) strong")
+    name_book = (By.CSS_SELECTOR, ".product_main h1")
+    price_message = (By.CSS_SELECTOR, "#messages>:nth-child(3) strong")
+    price = (By.CSS_SELECTOR, ".product_main .price_color")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages div.alertinner")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+    REGISTRY_EMAIL = (By.CSS_SELECTOR, '#id_registration-email')
+    PASSWORD = (By.CSS_SELECTOR, '#id_registration-password1')
+    PASSWORD_VERIFY = (By.CSS_SELECTOR, '#id_registration-password2')
