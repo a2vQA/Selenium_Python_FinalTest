@@ -1,8 +1,5 @@
-# from .pages.main_page import MainPage
-# from .pages.login_page import LoginPage
 import time
 import pytest
-from selenium import webdriver
 
 from .pages.login_page import LoginPage
 

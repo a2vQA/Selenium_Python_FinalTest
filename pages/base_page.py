@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
-import math
 from .locators import BasePageLocators
 from .locators import AnyPageLocators
 from selenium.webdriver.support.wait import WebDriverWait
@@ -20,8 +19,9 @@ class BasePage:
     def forward_to_basket(self):
         to_basket = self.browser.find_element(*AnyPageLocators.BASKET_BTN).click()
 
-    def go_to_login_page_F(self):
-        login = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID).click()
+    def go_to_login_page(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK).click()
 
     def is_element_present(self, how, what):
         try:
