@@ -6,8 +6,8 @@ class MainPageLocators:
 
 
 class LoginPageLocators:
-    login_form = (By.CSS_SELECTOR, "#login_form")
     register_form = (By.CSS_SELECTOR, "#register_form")
+    login_form = (By.CSS_SELECTOR, "#login_form")
 
 
 class BasketTaskLocators:

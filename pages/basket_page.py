@@ -1,11 +1,11 @@
 from .base_page import BasePage
-from .locators import BasePageLocators
+from .locators import BasePageLocators, AnyPageLocators
 from .locators import BasketPageLocators
 
 
 class BasketPage(BasePage):
     def guest_can_go_to_basket_page(self):
-        button = self.browser.find_element(*BasePageLocators.BASKET_BUTTON)
+        button = self.browser.find_element(*AnyPageLocators.BASKET_BTN)
         button.click()
 
     def guest_cant_see_product_in_basket(self):

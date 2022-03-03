@@ -46,6 +46,7 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page.go_to_login_page()
     page.should_be_login_page()
 
+
 class TestUserAddToBasketFromProductPage:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
