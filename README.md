@@ -1,2 +1,2 @@
 # FinalTest
-Final test for stepik course.
+Diploma for stepik course - https://stepik.org/course/575/.
